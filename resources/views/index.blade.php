@@ -1,0 +1,5 @@
+@include('home.header')
+@include('home.main')
+@yield('head')
+@yield('main')
+@yield('footer')
