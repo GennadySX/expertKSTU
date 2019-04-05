@@ -25,12 +25,7 @@
   <link href="{{asset('personal/dashboard/css/style-responsive.css')}}" rel="stylesheet">
   <script src="{{asset('personal/dashboard/lib/chart-master/Chart.js')}}"></script>
 
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+
 </head>
 
 <body>
@@ -44,7 +39,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="/" class="logo"><b>DASH<span>IO</span></b></a>
+      <a href="/" class="logo"><b>Expert<span>SX</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -131,7 +126,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{{asset('personal/dashboard/img/ui-zac.jpg')}}"></span>
                   <span class="subject">
                   <span class="from">Zac Snider</span>
                   <span class="time">Just now</span>
@@ -143,7 +138,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{{asset('personal/dashboard/img/ui-divya.jpg')}}"></span>
                   <span class="subject">
                   <span class="from">Divya Manian</span>
                   <span class="time">40 mins.</span>
@@ -155,7 +150,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{{asset('personal/dashboard/img/ui-danro.jpg')}}"></span>
                   <span class="subject">
                   <span class="from">Dan Rogers</span>
                   <span class="time">2 hrs.</span>
@@ -167,7 +162,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{{asset('personal/dashboard/img/ui-sherman.jpg')}}"></span>
                   <span class="subject">
                   <span class="from">Dj Sherman</span>
                   <span class="time">4 hrs.</span>
@@ -233,7 +228,13 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
+          <li><a class="logout" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
+                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form></li>
+
         </ul>
       </div>
     </header>
@@ -359,7 +360,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.html"><img src="{{asset('personal/dashboard/img/ui-sam.jpg')}}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
             <a class="active" href="index.html">
@@ -621,7 +622,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-3 centered hidden-sm hidden-xs">
-                      <img src="img/ui-danro.jpg" class="img-circle" width="65">
+                      <img src="{{asset('personal/dashboard/img/ui-danro.jpg')}}" class="img-circle" width="65">
                     </div>
                     <div class="col-md-9">
                       <p>
@@ -659,7 +660,7 @@
                   <div class="white-header">
                     <h5>TOP USER</h5>
                   </div>
-                  <p><img src="img/ui-zac.jpg" class="img-circle" width="50"></p>
+                  <p><img src="{{asset('personal/dashboard/img/ui-zac.jpg')}}" class="img-circle" width="50"></p>
                   <p><b>Zac Snider</b></p>
                   <div class="row">
                     <div class="col-md-6">
@@ -690,7 +691,7 @@
               <div class="col-lg-4 col-md-4 col-sm-4 mb">
                 <div class="product-panel-2 pn">
                   <div class="badge badge-hot">HOT</div>
-                  <img src="img/product.jpg" width="200" alt="">
+                  <img src="{{asset('personal/dashboard/img/product.jpg')}}" width="200" alt="">
                   <h5 class="mt">Flat Pack Heritage</h5>
                   <h6>TOTAL SALES: 1388</h6>
                   <button class="btn btn-small btn-theme04">FULL REPORT</button>
@@ -702,7 +703,7 @@
                 <div class="content-panel pn">
                   <div id="profile-02">
                     <div class="user">
-                      <img src="img/friends/fr-06.jpg" class="img-circle" width="80">
+                      <img src="{{asset('personal/dashboard/img/friends/fr-06.jpg')}}" class="img-circle" width="80">
                       <h4>DJ SHERMAN</h4>
                     </div>
                   </div>
@@ -835,7 +836,7 @@
             <!-- First Member -->
             <div class="desc">
               <div class="thumb">
-                <img class="img-circle" src="img/ui-divya.jpg" width="35px" height="35px" align="">
+                <img class="img-circle" src="{{asset('personal/dashboard/img/ui-divya.jpg')}}" width="35px" height="35px" align="">
               </div>
               <div class="details">
                 <p>
@@ -847,7 +848,7 @@
             <!-- Second Member -->
             <div class="desc">
               <div class="thumb">
-                <img class="img-circle" src="img/ui-sherman.jpg" width="35px" height="35px" align="">
+                <img class="img-circle" src="{{asset('personal/dashboard/img/ui-sherman.jpg')}}" width="35px" height="35px" align="">
               </div>
               <div class="details">
                 <p>
@@ -859,7 +860,7 @@
             <!-- Third Member -->
             <div class="desc">
               <div class="thumb">
-                <img class="img-circle" src="img/ui-danro.jpg" width="35px" height="35px" align="">
+                <img class="img-circle" src="{{asset('personal/dashboard/img/ui-danro.jpg')}}" width="35px" height="35px" align="">
               </div>
               <div class="details">
                 <p>
@@ -871,7 +872,7 @@
             <!-- Fourth Member -->
             <div class="desc">
               <div class="thumb">
-                <img class="img-circle" src="img/ui-zac.jpg" width="35px" height="35px" align="">
+                <img class="img-circle" src="{{asset('personal/dashboard/img/ui-zac.jpg')}}" width="35px" height="35px" align="">
               </div>
               <div class="details">
                 <p>

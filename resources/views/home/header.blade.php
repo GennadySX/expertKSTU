@@ -63,8 +63,27 @@
                             <li><a href="blog-single.html">Blog Details</a></li>
                         </ul>
                     </li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Resigter</a></li>
+                       @guest
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                     @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}">Resigter</a></li>
+                             @endif
+                        @else
+                        <li class="menu-has-children"><a href="/dashboard">{{ Auth::user()->name }}</a>
+                        <ul>
+                            <li><a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                        </ul>
+                    </li>
+                        
+                        @endguest
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
